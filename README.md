@@ -1,2 +1,2 @@
 # Single Page App
-<a href="https://ghmamadreza84.github.io/Single-Page-App" style="color:blue">Demo Link </a>
+<a href="https://ghmamadreza84.github.io/Single-Page-App" style="color:red;text-decoration: none;">Demo Link </a>
