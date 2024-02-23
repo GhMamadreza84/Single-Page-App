@@ -1,0 +1,287 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: varela;
+  background-color: #f8f8f8;
+}
+
+@font-face {
+  font-family: varela;
+  src: url("./assets/varela-round.ttf");
+}
+
+header {
+  background-color: #2c3e50;
+  padding: 15px 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  background-color: #38516a;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+.navbar .navbar-list {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  padding: 1rem;
+}
+
+.navbar .navbar-list .nav-link {
+  color: #fff;
+  text-decoration: none;
+  padding: 1rem 1.3rem;
+  transition: background-color 0.3s;
+}
+
+.navbar .navbar-list .nav-link.active,
+.navbar .navbar-list .nav-link:hover {
+  background-color: #2c3e50;
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.main-title {
+  text-align: center;
+  color: #e74c3c;
+  font-size: 2em;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin-top: 1rem;
+}
+
+/*-------------- Home page Styles --------------*/
+.home-container {
+  display: flex;
+  margin: 0 2rem;
+  gap: 1rem;
+  align-items: center;
+  height: 66vh;
+  border-radius: 8px;
+}
+
+@media only screen and (max-width: 600px) {
+  .home-container {
+    flex-direction: column;
+    margin: 0 1rem;
+  }
+}
+
+.home-left-section {
+  flex: 1;
+  text-align: center;
+  padding: 2rem;
+}
+@media only screen and (max-width: 600px) {
+  .home-left-section {
+    padding: 0;
+    margin-top: 1rem;
+  }
+}
+
+.home-right-section {
+  flex: 1;
+}
+
+.home-person-image {
+  width: 92%;
+  height: auto;
+  border-radius: 8px 0 0 8px;
+  object-fit: contain;
+  filter: contrast(1.1);
+  filter: drop-shadow(0 14px 8px rgba(0, 0, 0, 0.5));
+}
+
+.home-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  font-weight: bold;
+}
+
+.js-text {
+  color: #e74c3c;
+}
+
+@media only screen and (max-width: 600px) {
+  .home-title {
+    font-size: 1.4rem;
+  }
+}
+.home-text {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.home-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  text-decoration: none;
+  color: #fff;
+  background-color: #e74c3c;
+  border-radius: 5px;
+}
+
+/*--------------- Course Styles ---------------*/
+.course-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.course {
+  width: 300px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 20px;
+}
+
+.course img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+}
+
+.course-content {
+  padding: 0.8rem;
+}
+
+.course-title {
+  font-size: 1.2em;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.course-price {
+  color: #e74c3c;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.course-description {
+  font-size: 0.9em;
+  color: #555;
+  line-height: 1.4rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .course {
+    width: 100%;
+  }
+}
+
+/*----------------- Contact Styles -----------------*/
+.contact-container {
+  display: flex;
+  margin: 0 3.2rem;
+  margin-top: 1.6rem;
+  gap: 1rem;
+}
+
+.contact-image {
+  flex: 1;
+}
+
+.contact-image img {
+  width: 100%;
+  height: 95%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.contact-details-item {
+  margin-bottom: 0.5rem;
+}
+
+.contact-info {
+  flex: 1;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.contact-title {
+  color: #000;
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.contact-details {
+  font-size: 1em;
+  color: #555;
+  line-height: 1.6;
+}
+
+.contact-link {
+  color: inherit;
+}
+
+@media only screen and (max-width: 600px) {
+  .contact-container {
+    flex-direction: column;
+    margin: 0 1rem;
+  }
+}
+
+/*_____________________ Blogs Styles ___________________*/
+
+.blog-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.blog-card {
+  width: 300px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 20px;
+}
+
+.blog-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.blog-content {
+  padding: 16px;
+}
+
+.blog-title {
+  font-size: 1.2em;
+  margin-bottom: 8px;
+}
+
+.blog-date {
+  color: #555;
+  font-size: 0.9em;
+  margin-bottom: 8px;
+}
+
+.blog-description {
+  font-size: 0.9em;
+  color: #555;
+}
