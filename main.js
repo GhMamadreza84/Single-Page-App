@@ -30,19 +30,40 @@ navLink.forEach((link) => {
 });
 
 const changeUrlRoute = (href) => {
-  window.history.pushState({}, "", `#${href}`);
+  window.history.pushState({ href }, "", `#${href}`);
   changePageContent(href);
 };
-
+// function to change content of container dynamicly
 const changePageContent = async (href) => {
   contentContainer.innerHTML = "";
   const { page, title } = routerInfo[href];
-
+  // fetch to current page
   const res = await fetch(page);
   const html = await res.text();
 
+  // change html format from text into valid html
   const parser = new DOMParser();
   const doc = parser.parseFromString(html, "text/html");
+  // check if new content is home page or another page
+  const existHeader = doc.body.querySelector("#main-header");
 
-  contentContainer.appendChild(doc.body);
+  // if it was home page ,just add main content ( not header )
+  if (existHeader) {
+    const homeMainContent = doc.body.querySelector("#content-container");
+    contentContainer.innerHTML = homeMainContent.outerHTML;
+  } else {
+    // if it was another page ,add whole html into container
+    contentContainer.innerHTML = doc.body.outerHTML;
+  }
+  document.title = title;
+
+  navLink.forEach((link) => {
+    link.classList.remove("active");
+    if (link.textContent.toLocaleLowerCase() === href) {
+      link.classList.add("active");
+    }
+  });
 };
+window.addEventListener("popstate", (e) => {
+  changePageContent(e.state.href);
+});
