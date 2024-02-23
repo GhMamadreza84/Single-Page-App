@@ -33,7 +33,7 @@ const changeUrlRoute = (href) => {
   window.history.pushState({ href }, "", `#${href}`);
   changePageContent(href);
 };
-// function to change content of container dynamicly 
+// function to change content of container dynamicly
 const changePageContent = async (href) => {
   contentContainer.innerHTML = "";
   const { page, title } = routerInfo[href];
@@ -64,6 +64,16 @@ const changePageContent = async (href) => {
     }
   });
 };
+// update content when click in go back button
 window.addEventListener("popstate", (e) => {
-  changePageContent(e.state.href);
+  if (e.state === null) {
+    changePageContent("home");
+  } else {
+    changePageContent(e.state.href);
+  }
+});
+// update last loaded content when refresh
+window.addEventListener("DOMContentLoaded", () => {
+  const initialState = location.hash ? location.hash.substring(1) : "home";
+  changePageContent(initialState);
 });
