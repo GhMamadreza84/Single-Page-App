@@ -33,7 +33,7 @@ const changeUrlRoute = (href) => {
   window.history.pushState({ href }, "", `#${href}`);
   changePageContent(href);
 };
-// function to change content of container dynamicly
+// function to change content of container dynamicly 
 const changePageContent = async (href) => {
   contentContainer.innerHTML = "";
   const { page, title } = routerInfo[href];
